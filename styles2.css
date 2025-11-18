@@ -1,0 +1,203 @@
+/* ------------------------------------------------ */
+/* 1. VARIÁVEIS E RESET */
+/* ------------------------------------------------ */
+:root {
+    --cor-primaria: #0a1f44;
+    --cor-secundaria: #ffd700;
+    --cor-fundo: #fbf9f4;
+    --cor-texto: #333333;
+    --cor-sucesso: #4CAF50;
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    background-color: var(--cor-fundo);
+    color: var(--cor-texto);
+    font-family: 'Georgia', serif;
+    line-height: 1.6;
+}
+
+/* ------------------------------------------------ */
+/* 2. CABEÇALHO E NAVEGAÇÃO */
+/* ------------------------------------------------ */
+
+.cabecalho {
+    background-color: var(--cor-primaria);
+    padding: 15px 40px;
+    margin-bottom: 40px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+}
+
+.logo {
+    width: 80px;
+    height: auto;
+    border-radius: 50%;
+}
+
+nav {
+    display: flex;
+    gap: 25px;
+}
+
+/* CORRIGIDO: estiliza apenas os links do menu */
+nav div {
+    color: white;
+    text-decoration: none;
+    font-weight: 500;
+    text-transform: uppercase;
+    font-size: 0.9em;
+    padding: 5px 10px;
+    transition: color 0.3s, border-bottom 0.3s;
+    cursor: pointer;
+}
+
+nav div:hover {
+    color: var(--cor-secundaria);
+    border-bottom: 2px solid var(--cor-secundaria);
+    text-shadow: 0 0 4px rgba(0, 0, 0, 0.4);
+}
+
+/* ------------------------------------------------ */
+/* 3. TIPOGRAFIA E CONTEÚDO */
+/* ------------------------------------------------ */
+
+h1, h2, h3 {
+    text-align: center;
+    color: var(--cor-primaria);
+    font-family: 'Playfair Display', serif;
+    margin-bottom: 15px;
+}
+
+h1 {
+    font-size: 3em;
+    margin-top: 10px;
+    margin-bottom: 40px;
+}
+
+h2 {
+    font-size: 2em;
+    border-bottom: 2px solid var(--cor-secundaria);
+    display: inline-block;
+    padding-bottom: 5px;
+    margin-top: 30px;
+}
+
+h3 {
+    font-size: 1.5em;
+    color: #4b4b4b;
+    margin-top: 25px;
+}
+
+section {
+    max-width: 900px;
+    margin: 0 auto;
+    padding: 20px 40px;
+}
+
+p {
+    margin-bottom: 20px;
+    text-align: justify;
+}
+
+p strong {
+    color: var(--cor-primaria);
+}
+
+/* ------------------------------------------------ */
+/* 4. LISTAS */
+/* ------------------------------------------------ */
+
+ul {
+    max-width: 700px;
+    margin: 20px auto 30px;
+    list-style: none;
+}
+
+ul li {
+    background-color: #f0ede6;
+    padding: 10px 15px;
+    margin-bottom: 8px;
+    border-left: 5px solid var(--cor-secundaria);
+    border-radius: 4px;
+    box-shadow: 1px 1px 3px rgba(0, 0, 0, 0.05);
+    display: flex;
+    align-items: center;
+}
+
+ul li::before {
+    content: "•";
+    color: var(--cor-secundaria);
+    font-size: 1.4em;
+    margin-right: 10px;
+    line-height: 0;
+}
+
+li strong {
+    color: var(--cor-primaria);
+}
+
+/* ------------------------------------------------ */
+/* 5. BOTÃO CTA */
+/* ------------------------------------------------ */
+
+.btn-agendar {
+    display: block;
+    width: 300px;
+    margin: 30px auto 50px;
+    background-color: var(--cor-sucesso);
+    color: white;
+    padding: 15px 30px;
+    text-decoration: none;
+    border-radius: 50px;
+    font-size: 1.2em;
+    font-weight: bold;
+    text-align: center;
+    transition: background-color 0.3s ease, transform 0.2s;
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.2);
+}
+
+.btn-agendar:hover {
+    background-color: #3b8e40;
+    transform: translateY(-2px);
+}
+
+/* ------------------------------------------------ */
+/* 6. RESPONSIVIDADE */
+/* ------------------------------------------------ */
+
+@media (max-width: 768px) {
+
+    .cabecalho {
+        flex-direction: column;
+        padding: 15px 20px;
+    }
+
+    nav {
+        margin-top: 15px;
+        gap: 15px;
+    }
+
+    h1 {
+        font-size: 2em;
+    }
+
+    h2 {
+        font-size: 1.5em;
+    }
+
+    section {
+        padding: 10px 20px;
+    }
+
+    .btn-agendar {
+        width: 90%;
+    }
+}
